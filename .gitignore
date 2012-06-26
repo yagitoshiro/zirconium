@@ -1,0 +1,7 @@
+tmp
+Makefile
+GuardFile
+bin
+.DS_Store
+build/*
+*.log
