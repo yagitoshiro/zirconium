@@ -5,17 +5,16 @@ Zirconium - Unofficial Titanium Japan Community Apps
 globals = {}
 do ->
     # Load modules
-    AppTabGroup = require("/ui/AppTabGroup")
+    AppTabGroup = require "/ui/AppTabGroup"
+    TwitterView = require "/ui/TwitterView"
 
     tabGroup = new AppTabGroup()
     tabParam = [{
-        tabId: "tab0"
-        title: "Left"
-        window: Ti.UI.createWindow
-            title: "Left"
-            backgroundColor: "#FFFFFF"
+        tabId: "tab_0"
+        title: "Twitter"
+        window: (new TwitterView()).getWindow()
     }, {
-        tabId: "tab1"
+        tabId: "tab_1"
         title: "Right"
         window: Ti.UI.createWindow
             title: "Right"
