@@ -2,22 +2,32 @@
 Zirconium - Unofficial Titanium Japan Community Apps
 ###
 
-zr = {}
+globals = {}
 do ->
-    tabGroup = Ti.UI.createTabGroup()
+    # Load modules
+    AppTabGroup = require("/ui/AppTabGroup")
+
+    # Make Tabgroup
+    tabGroup = new AppTabGroup()
+
+    # Tabs parameter
     tabParam = [{
-        title : "Left"
+        tabId: "tab0"
+        title: "Left"
         window: Ti.UI.createWindow
             title: "Left"
             backgroundColor: "#FFFFFF"
-    },{
-        title : "Right"
+    }, {
+        tabId: "tab1"
+        title: "Right"
         window: Ti.UI.createWindow
             title: "Right"
             backgroundColor: "#FFFFFF"
     }]
-    tabs = (Ti.UI.createTab param for param in tabParam)
-    tabGroup.addTab tab for tab in tabs
-    tabGroup.setActiveTab 0
-    tabGroup.open()
+
+    # Append tabs
+    tabGroup.appendTab param for param in tabParam
+
+    # Running
+    tabGroup.open(0)
     return
