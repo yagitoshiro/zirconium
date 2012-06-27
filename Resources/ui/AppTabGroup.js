@@ -1,5 +1,5 @@
 /*
-Zirconium
+Zirconium - Unofficial Titanium Japan Community Apps
 AppTabGroup Class
 */
 
@@ -22,9 +22,15 @@ AppTabGroup = (function() {
     return this.tabGroup;
   };
 
-  AppTabGroup.prototype.appendTab = function(param) {
+  AppTabGroup.prototype.appendTab = function(param, win) {
     var tab;
     tab = Ti.UI.createTab(param);
+    if (win != null) {
+      tab.window = win;
+    }
+    if (tab.window != null) {
+      tab.window.containingTab = tab;
+    }
     if ((param.tabId != null) && typeof param.tabId === "string") {
       this.tabGroup[param.tabId] = tab;
     }
@@ -35,7 +41,6 @@ AppTabGroup = (function() {
     if (defaultTab == null) {
       defaultTab = 0;
     }
-    Ti.API.info(defaultTab);
     this.tabGroup.setActiveTab(defaultTab);
     this.tabGroup.open();
   };

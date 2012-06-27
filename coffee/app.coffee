@@ -7,10 +7,7 @@ do ->
     # Load modules
     AppTabGroup = require("/ui/AppTabGroup")
 
-    # Make Tabgroup
     tabGroup = new AppTabGroup()
-
-    # Tabs parameter
     tabParam = [{
         tabId: "tab0"
         title: "Left"
@@ -24,8 +21,6 @@ do ->
             title: "Right"
             backgroundColor: "#FFFFFF"
     }]
-
-    # Append tabs
     tabGroup.appendTab param for param in tabParam
 
     # Running
