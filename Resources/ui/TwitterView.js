@@ -112,6 +112,8 @@ TwitterView = (function() {
         row.add(userTweet);
         row.add(Ti.UI.createImageView({
           url: tweet.profile_image_url,
+          hires: true,
+          preventDefaultImage: true,
           top: 10,
           bottom: 6,
           left: 10,

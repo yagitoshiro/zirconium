@@ -5,6 +5,7 @@ Utilities Module
 
 exports.getJSON = (method, uri, params, callback) ->
     http = Ti.Network.createHTTPClient()
+    http.timeout = 60000 # 1min
     http.onload = ->
         json = JSON.parse http.responseText
         callback(json)

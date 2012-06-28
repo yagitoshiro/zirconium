@@ -5,3 +5,4 @@ bin
 .DS_Store
 build/*
 *.log
+twitter_sample_response.json

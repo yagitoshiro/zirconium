@@ -7,4 +7,12 @@
     <string name="tv_tweet">新規ツイート</string>
     <string name="tv_close">閉じる</string>
     <string name="tv_post">送信</string>
+    <!-- BBS -->
+    <string name="bbs_bbs">BBS</string>
+    <!-- Titanium Docs -->
+    <string name="td_tidocs">TiDocs</string>
+    <!-- Titanium News -->
+    <string name="tn_news">ニュース</string>
+    <!-- Other -->
+    <string name="or_other">その他</string>
 </resources>
