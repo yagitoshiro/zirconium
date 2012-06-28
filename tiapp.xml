@@ -8,11 +8,11 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <sdk-version>2.0.2.GA</sdk-version>
-    <id>net.imthinker.zr</id>
+    <id>net.imthinker.zirconium</id>
     <name>Zirconium</name>
     <version>1.0</version>
     <publisher>Ryutaro Miyashita</publisher>
-    <url>not specified</url>
+    <url>http://ti.imthinker.net/</url>
     <description>Zirconium - Unofficial Titanium Japan Community Apps</description>
     <copyright>2012 Ryutaro Miyashita</copyright>
     <icon>appicon.png</icon>

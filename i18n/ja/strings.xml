@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <!-- Common -->
+    <string name="appcColor">#942D1F</string>
+    <!-- TwitterView -->
+    <string name="tv_twitter">TitaniumJP</string>
+    <string name="tv_tweet">新規ツイート</string>
+    <string name="tv_close">閉じる</string>
+    <string name="tv_post">送信</string>
+</resources>
