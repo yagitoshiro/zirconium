@@ -13,9 +13,5 @@ exports.getJSON = function(method, uri, params, callback) {
     return callback(json);
   };
   http.open(method, uri);
-  if (method === "GET" || method === "get") {
-    http.send(null);
-  } else if (method === "POST" || method === "post") {
-    http.send(params);
-  }
+  http.send(params);
 };

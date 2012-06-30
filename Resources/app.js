@@ -3,11 +3,9 @@ Zirconium - Unofficial Titanium Japan Community Apps
 Entryponit
 */
 
-var console, globals, isiPhone;
+var globals, isiPhone;
 
 globals = {};
-
-console = {};
 
 if (Ti.Platform.name === "iPhone OS") {
   isiPhone = true;
@@ -22,7 +20,6 @@ if (Ti.Platform.name === "iPhone OS") {
   NewsView = require("/ui/NewsView");
   BBSView = require("/ui/BBSView");
   OtherView = require("/ui/OtherView");
-  tabGroup = new AppTabGroup();
   tabParam = [
     {
       tabId: "tab_0",
@@ -46,6 +43,7 @@ if (Ti.Platform.name === "iPhone OS") {
       window: (new OtherView()).getWindow()
     }
   ];
+  globals.tabGroup = tabGroup = new AppTabGroup();
   for (_i = 0, _len = tabParam.length; _i < _len; _i++) {
     param = tabParam[_i];
     tabGroup.appendTab(param);

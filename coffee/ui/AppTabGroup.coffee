@@ -3,6 +3,7 @@ Zirconium - Unofficial Titanium Japan Community Apps
 AppTabGroup Class
 ###
 
+# @class
 class AppTabGroup
     constructor: (glb = globals) ->
         @tabGroup = Ti.UI.createTabGroup()

@@ -4,7 +4,6 @@ Entryponit
 ###
 
 globals = {}
-console = {}
 
 if Ti.Platform.name is "iPhone OS"
     isiPhone  = true
@@ -18,7 +17,6 @@ do ->
     BBSView     = require "/ui/BBSView"
     OtherView   = require "/ui/OtherView"
 
-    tabGroup = new AppTabGroup()
     tabParam = [{
         tabId: "tab_0"
         title: L("tv_twitter")
@@ -40,6 +38,7 @@ do ->
         icon: "images/light_more.png"
         window: (new OtherView()).getWindow()
     }]
+    globals.tabGroup = tabGroup = new AppTabGroup()
     tabGroup.appendTab param for param in tabParam
 
     # Running
