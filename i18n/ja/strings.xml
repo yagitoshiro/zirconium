@@ -11,6 +11,7 @@
     <string name="bbs_bbs">BBS</string>
     <!-- Titanium Docs -->
     <string name="td_tidocs">TiDocs</string>
+    <string name="td_tidocs_full">API Documents</string>
     <!-- Titanium News -->
     <string name="tn_news">ニュース</string>
     <!-- Other -->

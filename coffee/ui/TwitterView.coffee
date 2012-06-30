@@ -10,7 +10,7 @@ class TwitterView
             title: L("tv_twitter")
             barColor: L("appcColor")
             backgroundColor: "#FFFFFF"
-        # Private Variables
+            tabBarHidden: true if isiPhone
         # New Tweet Button
         writeButton = Ti.UI.createButton
             systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
@@ -19,8 +19,18 @@ class TwitterView
             (twitCompose(writeButton, arguments.callee)).open()
             return
         @win.rightNavButton = writeButton
+        # iPhone Custom Tab Bar
+        if isiPhone
+            tabBar = Ti.UI.createImageView
+                image: "/images/iPhoneCustomTabBar.png"
+                hires: true
+                left: 0
+                bottom: 0
+                zIndex: 999
+            @win.add tabBar
         # Timeline View
         timeline = Ti.UI.createTableView
+            backgroundColor: "#FFFFFF"
             data: []
         @win.add timeline
         timelineCompose timeline
@@ -53,6 +63,7 @@ class TwitterView
                 row = Ti.UI.createTableViewRow
                     className: "tweet"
                     height: Ti.UI.SIZE
+                    backgroundColor: "#FFFFFF"
                 # User name
                 row.add Ti.UI.createLabel
                     text: tweet.from_user_name
@@ -60,6 +71,7 @@ class TwitterView
                         fontWeight: "bold"
                         fontStyle: "normal"
                     color: "#333333"
+                    backgroundColor: "#FFFFFF"
                     top: 6
                     left: 68
                     width: Ti.UI.SIZE
@@ -72,6 +84,7 @@ class TwitterView
                         fontWeight: "normal"
                         fontStyle: "normal"
                     color: "#363636"
+                    backgroundColor: "#FFFFFF"
                     top: 24
                     bottom: 6
                     left: 68
@@ -91,9 +104,10 @@ class TwitterView
                 row.add userTweet
                 # User icon
                 row.add Ti.UI.createImageView
-                    url: tweet.profile_image_url
+                    image: tweet.profile_image_url
                     hires: true
                     preventDefaultImage: true
+                    backgroundColor: "#FFFFFF"
                     top: 10
                     bottom: 6
                     left: 10

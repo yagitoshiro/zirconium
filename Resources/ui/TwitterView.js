@@ -9,11 +9,12 @@ TwitterView = (function() {
   var timelineCompose, twitCompose;
 
   function TwitterView() {
-    var timeline, writeButton;
+    var tabBar, timeline, writeButton;
     this.win = Ti.UI.createWindow({
       title: L("tv_twitter"),
       barColor: L("appcColor"),
-      backgroundColor: "#FFFFFF"
+      backgroundColor: "#FFFFFF",
+      tabBarHidden: isiPhone ? true : void 0
     });
     writeButton = Ti.UI.createButton({
       systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
@@ -23,7 +24,18 @@ TwitterView = (function() {
       (twitCompose(writeButton, arguments.callee)).open();
     });
     this.win.rightNavButton = writeButton;
+    if (isiPhone) {
+      tabBar = Ti.UI.createImageView({
+        image: "/images/iPhoneCustomTabBar.png",
+        hires: true,
+        left: 0,
+        bottom: 0,
+        zIndex: 999
+      });
+      this.win.add(tabBar);
+    }
     timeline = Ti.UI.createTableView({
+      backgroundColor: "#FFFFFF",
       data: []
     });
     this.win.add(timeline);
@@ -66,7 +78,8 @@ TwitterView = (function() {
         var row, userTweet;
         row = Ti.UI.createTableViewRow({
           className: "tweet",
-          height: Ti.UI.SIZE
+          height: Ti.UI.SIZE,
+          backgroundColor: "#FFFFFF"
         });
         row.add(Ti.UI.createLabel({
           text: tweet.from_user_name,
@@ -75,6 +88,7 @@ TwitterView = (function() {
             fontStyle: "normal"
           },
           color: "#333333",
+          backgroundColor: "#FFFFFF",
           top: 6,
           left: 68,
           width: Ti.UI.SIZE,
@@ -88,6 +102,7 @@ TwitterView = (function() {
             fontStyle: "normal"
           },
           color: "#363636",
+          backgroundColor: "#FFFFFF",
           top: 24,
           bottom: 6,
           left: 68,
@@ -111,9 +126,10 @@ TwitterView = (function() {
         });
         row.add(userTweet);
         row.add(Ti.UI.createImageView({
-          url: tweet.profile_image_url,
+          image: tweet.profile_image_url,
           hires: true,
           preventDefaultImage: true,
+          backgroundColor: "#FFFFFF",
           top: 10,
           bottom: 6,
           left: 10,
